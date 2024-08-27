@@ -1,0 +1,43 @@
+
+ .glass-effect {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px); 
+  width: 70%;
+  background-image: url('./assets/splash-icon.svg');
+  background-blend-mode:hue; 
+}
+.loader {
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 4px;
+  color: rgb(38, 38, 38);
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: currentColor;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+  animation: animloader 0.3s 0.45s linear infinite alternate;
+}
+.loader::after {
+    top: -15px;
+    animation-delay: 0s;
+}
+
+@keyframes animloader {
+    0% { width: 4.8px }
+    100% { width: 48px}
+}
